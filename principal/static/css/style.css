@@ -13,7 +13,7 @@ html, body {
 
 /* Fondo gradiente suave */
 body {
-    background: linear-gradient(135deg, #f3f4f6, #e2e8f0);  /* Gradiente desde un gris muy claro a un gris más oscuro */
+    background: linear-gradient(135deg, #f3f4f6, #e2e8f0);  
     color: #333;
 }
 
@@ -33,22 +33,14 @@ body {
     text-align: center;
 }
 
-/* Estilos para el logo */
-#logo {
-    height: 100px; /* Ajusta el tamaño del logo según lo necesites */
-    margin-right: 15px; /* Espaciado a la derecha del logo */
-    vertical-align: middle; /* Centra verticalmente el logo con el texto */
-}
-
 /* Estilos para el header */
 header {
     background-color: #133d87;
     color: white;
     padding: 15px 20px;
     display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas si es necesario */
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -58,7 +50,6 @@ header {
 .header-left {
     display: flex;
     align-items: center;
-    flex: 1 1 40%; /* Esto hace que ocupe el 40% del espacio disponible */
 }
 
 #logo {
@@ -76,8 +67,8 @@ header {
 /* Sección derecha (Título principal) */
 .header-right {
     text-align: center;
-    flex-grow: 2; /* Permite que el título ocupe más espacio */
-    flex-basis: 50%; /* Esto hace que ocupe el 50% del espacio disponible */
+    flex-grow: 1; /* Permite que el título ocupe más espacio */
+    margin-right: 22%;
 }
 
 .header-right h1 {
@@ -88,10 +79,6 @@ header {
 .search-form {
     margin: 20px auto;
     text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px; /* Espaciado uniforme entre elementos */
 }
 
 .search-form label {
@@ -109,7 +96,6 @@ header {
     transition: border 0.3s ease-in-out;
 }
 
-/* Efecto al hacer foco en el input */
 .search-form input:focus {
     border: 1px solid #4a90e2;  
     box-shadow: 0 0 8px rgba(74, 144, 226, 0.5);
@@ -124,6 +110,7 @@ header {
     cursor: pointer;
     font-size: 16px;
     border-radius: 25px;
+    margin-left: 10px;
     transition: background-color 0.3s ease;
 }
 
@@ -134,48 +121,11 @@ header {
 #clear-btn {
     background-color: #e94e77;
     border-radius: 25px;
+    padding: 12px 20px;
 }
 
 #clear-btn:hover {
     background-color: #d43f5e;
-}
-
-/* 📱 Estilos para pantallas pequeñas */
-@media screen and (max-width: 768px) {
-    header {
-        flex-direction: column;  /* Cambia la dirección a columna en pantallas pequeñas */
-        text-align: center; /* Centra los textos */
-        padding: 10px 15px; /* Reduce el padding en pantallas pequeñas */
-    }
-
-    /* Ajustes para la sección izquierda (logo y nombre) */
-    .header-left {
-        flex: 1 1 100%;  /* Ocupa el 100% del espacio disponible */
-        margin-bottom: 10px; /* Añade un margen inferior para separar el logo del título */
-    }
-
-    /* Ajustes para la sección derecha (título principal) */
-    .header-right {
-        flex: 1 1 100%; /* También ocupa el 100% del espacio */
-        margin-bottom: 10px; /* Espacio debajo del título */
-    }
-
-    /* Ajuste en el tamaño del título */
-    .header-right h1 {
-        font-size: 24px; /* Ajusta el tamaño del título en móviles */
-    }
-
-    /* Ajuste para los márgenes y espaciado */
-    .header-right {
-        margin-right: 0;
-    }
-}
-
-/* Ajustes para pantallas más pequeñas (teléfonos muy pequeños) */
-@media screen and (max-width: 480px) {
-    .header-right h1 {
-        font-size: 20px;  /* Ajusta aún más el tamaño del título */
-    }
 }
 
 /* Estilos de la tabla */
@@ -183,9 +133,9 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    background-color: #ffffff; /* Fondo blanco para la tabla */
+    background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave en la tabla */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 th, td {
@@ -196,19 +146,18 @@ th, td {
 }
 
 th {
-    background-color: #133d87; /* Azul suave para los encabezados */
+    background-color: #133d87;
     color: white;
 }
 
 td {
-    background-color: #f9f9f9; /* Color suave para las celdas */
+    background-color: #f9f9f9;
 }
 
 tr:nth-child(even) td {
-    background-color: #f2f2f2; /* Alternar color de filas */
+    background-color: #f2f2f2;
 }
 
-/* Efecto al pasar el ratón sobre las filas de la tabla */
 tr:hover {
     background-color: #e3f2fd;
 }
@@ -222,62 +171,52 @@ footer {
     width: 100%;
     position: relative;
     bottom: 0;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave en el footer */
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
     font-size: 16px;
     border-radius: 10px;
 }
 
 /* ============================= */
-/* Media Queries para hacer responsive */
+/* Media Queries para hacer el HEADER RESPONSIVE */
 
-/* Pantallas pequeñas (móviles) */
+/* Pantallas pequeñas (tablets y móviles) */
 @media screen and (max-width: 768px) {
-    .container {
-        margin-left: 5%;
-        margin-right: 5%;
+    header {
+        flex-direction: column;  /* Cambia el diseño a columna */
+        text-align: center;  /* Centra los elementos */
+        padding: 10px;
     }
 
-    /* Header: Ajuste del tamaño del logo y el título */
-    header h1 {
-        font-size: 20px;
+    .header-left {
+        flex-direction: column;
+        align-items: center;
         text-align: center;
     }
 
-    /* Formulario de búsqueda: Ajustar el tamaño del input */
-    .search-form input {
-        width: 100%;  /* Ocupa todo el ancho disponible */
-        padding: 10px;
+    #logo {
+        height: 60px; /* Reduce el tamaño del logo */
+        margin-right: 0;
+        margin-bottom: 5px;
     }
 
-    .search-form button {
-        width: 100%;  /* Ocupa todo el ancho disponible */
-        padding: 10px;
-        font-size: 18px;
+    .university-name {
+        font-size: 14px;
+        text-align: center;
     }
 
-    #clear-btn {
-        width: 100%;  /* Ocupa todo el ancho disponible */
-        padding: 10px;
-        font-size: 18px;
+    .header-right {
+        margin-right: 0;
+        margin-top: 10px;
+        text-align: center;
     }
 
-    /* Tabla responsiva: Hacerla scrollable */
-    table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-
-    th, td {
-        padding: 8px 10px; /* Reducir el padding */
-    }
-
-    footer {
-        font-size: 14px; /* Reducir tamaño de fuente en el footer */
+    .header-right h1 {
+        font-size: 20px; /* Reduce el tamaño del título en móviles */
+        word-wrap: break-word;
     }
 }
 
-/* Pantallas aún más pequeñas (teléfonos muy pequeños) */
+/* Pantallas muy pequeñas (teléfonos pequeños) */
 @media screen and (max-width: 480px) {
     header {
         padding: 15px;
