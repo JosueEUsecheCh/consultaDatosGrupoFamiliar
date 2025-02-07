@@ -1,0 +1,265 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Asegurar que el footer se mantenga abajo */
+html, body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Fondo gradiente suave */
+body {
+    background: linear-gradient(135deg, #f3f4f6, #e2e8f0);  /* Gradiente desde un gris muy claro a un gris más oscuro */
+    color: #333;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/* Asegurar que el contenido crezca y empuje el footer hacia abajo */
+.content {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos para el logo */
+#logo {
+    height: 100px; /* Ajusta el tamaño del logo según lo necesites */
+    margin-right: 15px; /* Espaciado a la derecha del logo */
+    vertical-align: middle; /* Centra verticalmente el logo con el texto */
+}
+
+/* Estilos para el header */
+header {
+    background-color: #133d87;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribuir elementos en el header */
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Sección izquierda (Logo + Nombre de la Universidad) */
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    height: 80px; /* Ajusta el tamaño del logo */
+    margin-right: 15px; /* Espaciado entre el logo y el texto */
+}
+
+/* Nombre de la universidad */
+.university-name {
+    font-size: 18px;
+    font-weight: bold;
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+/* Sección derecha (Título principal) */
+.header-right {
+    text-align: center;
+    flex-grow: 1; /* Permite que el título ocupe más espacio */
+    margin-right: 22%;
+    
+}
+
+.header-right h1 {
+    font-size: 48px;
+}
+
+
+/* Estilos del formulario */
+.search-form {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.search-form label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px; /* Espaciado entre el label y el input */
+}
+
+.search-form input {
+    width: 250px;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 25px; /* Bordes redondeados */
+    transition: border 0.3s ease-in-out;
+}
+
+/* Efecto al hacer foco en el input */
+.search-form input:focus {
+    border: 1px solid #4a90e2;  /* Borde azul cuando se hace foco */
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.5);  /* Sombra azul suave */
+}
+
+/* Botón de búsqueda y borrar */
+.search-form button {
+    background-color: #133d87;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 25px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.search-form button:hover {
+    background-color: #357ab7;  /* Azul más oscuro al pasar el mouse */
+}
+
+/* Botón "Borrar" con otro color */
+#clear-btn {
+    background-color: #e94e77; /* Rojo suave */
+    border-radius: 25px; /* Bordes redondeados */
+    padding: 12px 20px;
+}
+
+#clear-btn:hover {
+    background-color: #d43f5e; /* Rojo más oscuro */
+}
+
+/* Estilos de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff; /* Fondo blanco para la tabla */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave en la tabla */
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px 20px;
+    text-align: left;
+    font-size: 16px;
+}
+
+th {
+    background-color: #133d87; /* Azul suave para los encabezados */
+    color: white;
+}
+
+td {
+    background-color: #f9f9f9; /* Color suave para las celdas */
+}
+
+tr:nth-child(even) td {
+    background-color: #f2f2f2; /* Alternar color de filas */
+}
+
+/* Efecto al pasar el ratón sobre las filas de la tabla */
+tr:hover {
+    background-color: #e3f2fd;
+}
+
+/* Footer siempre abajo */
+footer {
+    background-color: #133d87;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave en el footer */
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+/* ============================= */
+/* Media Queries para hacer responsive */
+
+/* Pantallas pequeñas (móviles) */
+@media screen and (max-width: 768px) {
+    .container {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    /* Header: Ajuste del tamaño del logo y el título */
+    header h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    /* Formulario de búsqueda: Ajustar el tamaño del input */
+    .search-form input {
+        width: 100%;  /* Ocupa todo el ancho disponible */
+        padding: 10px;
+    }
+
+    .search-form button {
+        width: 100%;  /* Ocupa todo el ancho disponible */
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    #clear-btn {
+        width: 100%;  /* Ocupa todo el ancho disponible */
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    /* Tabla responsiva: Hacerla scrollable */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    th, td {
+        padding: 8px 10px; /* Reducir el padding */
+    }
+
+    footer {
+        font-size: 14px; /* Reducir tamaño de fuente en el footer */
+    }
+}
+
+/* Pantallas aún más pequeñas (teléfonos muy pequeños) */
+@media screen and (max-width: 480px) {
+    header {
+        padding: 15px;
+    }
+
+    .search-form input {
+        width: 90%;
+        font-size: 14px;
+    }
+
+    .search-form button {
+        width: 90%;
+        font-size: 16px;
+    }
+
+    #clear-btn {
+        width: 90%;
+        font-size: 16px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}

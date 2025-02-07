@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}Buscar Cédula{% endblock %}
+
+{% block content %}
+    <h1>Buscar Cédula Titular</h1>
+
+    <!-- Formulario de búsqueda con POST -->
+    <form method="post" class="search-form">
+        {% csrf_token %}
+        <label for="id_ci_titular">Cédula Titular:</label>
+        {{ form.ci_titular }}
+        <button type="submit">Buscar</button>
+        <button type="submit" name="clear" id="clear-btn">Borrar</button>  <!-- Botón con id "clear-btn" -->
+    </form>
+    
+    <!-- Tabla de resultados -->
+    {% if resultados %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Cédula Titular</th>
+                    <th>Apellidos</th>
+                    <th>Nombres</th>
+                    <th>Cédula Beneficiario</th>
+                    <th>Parentesco</th>
+                    <th>Sexo</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Edad</th>
+                    <th>Discapacidad o Condición Especial</th>
+                    <th>Indicar Menor Bajo Custodia Legal</th>
+                    <th>Observación</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for registro in resultados %}
+                    <tr>
+                        <td>{{ registro.ci_titular }}</td>
+                        <td>{{ registro.apellidos|default:" " }}</td>
+                        <td>{{ registro.nombres|default:" " }}</td>
+                        <td>{{ registro.ci_beneficiario|default:" " }}</td>
+                        <td>{{ registro.parentesco|default:" " }}</td>
+                        <td>{{ registro.sexo|default:" " }}</td>
+                        <td>{{ registro.fecha_de_nacimiento|default:" " }}</td>
+                        <td>{{ registro.edad|default:" " }}</td>
+                        <td>{{ registro.discapacidad_o_condicion_especial|default:" " }}</td>
+                        <td>{{ registro.indicar_menor_bajo_custodia_legal|default:" " }}</td>
+                        <td>{{ registro.observacion|default:" " }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% elif request.method == "POST" %}
+        <p id="no-results">No se encontraron resultados.</p>
+    {% endif %}
+{% endblock %}
