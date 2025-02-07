@@ -50,18 +50,27 @@ header {
 .header-left {
     display: flex;
     align-items: center;
+    flex-direction: column; /* Esto asegura que los elementos se apilen */
+    text-align: center; /* Centra el texto */
 }
 
 #logo {
     height: 80px; /* Ajusta el tamaño del logo */
-    margin-right: 15px; /* Espaciado entre el logo y el texto */
+    margin-bottom: 10px; /* Espaciado entre el logo y el texto */
+}
+
+/* Contenedor para el nombre de la universidad */
+.university-name-container {
+    display: flex;
+    flex-direction: column; /* Asegura que el texto se apile */
+    align-items: center; /* Centra los textos */
 }
 
 /* Nombre de la universidad */
 .university-name {
     font-size: 18px;
     font-weight: bold;
-    
+    line-height: 1.5; /* Añadir espacio entre las líneas */
 }
 
 /* Sección derecha (Título principal) */
@@ -162,6 +171,21 @@ tr:hover {
     background-color: #e3f2fd;
 }
 
+/* Añadir contenedor para la tabla con desplazamiento horizontal */
+.table-responsive {
+    overflow-x: auto;  /* Habilita el scroll horizontal */
+    -webkit-overflow-scrolling: touch;  /* Soporte para dispositivos móviles */
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Asegúrate de que las tablas no excedan el ancho de su contenedor */
+table {
+    width: 100%;
+    table-layout: auto;  /* Permite que las columnas se ajusten automáticamente */
+    min-width: 1000px;  /* Esto es para asegurarse de que las columnas sean suficientemente anchas en dispositivos pequeños */
+}
+
 /* Footer siempre abajo */
 footer {
     background-color: #133d87;
@@ -188,20 +212,15 @@ footer {
     }
 
     .header-left {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        flex-direction: column; /* Asegura que el logo y el texto estén en columna */
     }
 
     #logo {
-        height: 60px; /* Reduce el tamaño del logo */
-        margin-right: 0;
-        margin-bottom: 5px;
+        height: 60px; /* Reduce el tamaño del logo en pantallas pequeñas */
     }
 
     .university-name {
-        font-size: 14px;
-        text-align: center;
+        font-size: 16px; /* Reduce el tamaño del texto en móviles */
     }
 
     .header-right {
@@ -213,6 +232,27 @@ footer {
     .header-right h1 {
         font-size: 20px; /* Reduce el tamaño del título en móviles */
         word-wrap: break-word;
+    }
+
+    /* Ajustes para los botones en pantallas pequeñas */
+    .search-form input {
+        width: 90%; /* Ocupa el 90% del ancho disponible */
+        font-size: 14px;
+        margin-bottom: 1rem; /* Espacio entre el input y los botones */
+    }
+
+    .search-form button {
+        width: 90%;  /* Ocupa el 90% del ancho disponible */
+        font-size: 16px;
+        margin-bottom: 0.5rem; /* Añade margen entre los botones */
+        padding: 10px; /* Reduce el tamaño del botón */
+    }
+
+    #clear-btn {
+        width: 90%; /* Ocupa el 90% del ancho disponible */
+        font-size: 16px;
+        margin-bottom: 0.5rem; /* Añade margen entre los botones */
+        padding: 10px; /* Reduce el tamaño del botón */
     }
 }
 
@@ -231,13 +271,15 @@ footer {
     .search-form button {
         width: 90%;
         font-size: 16px;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem; /* Añade margen entre los botones */
+        padding: 10px;
     }
 
     #clear-btn {
         width: 90%;
         font-size: 16px;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem; /* Añade margen entre los botones */
+        padding: 10px;
     }
 
     footer {

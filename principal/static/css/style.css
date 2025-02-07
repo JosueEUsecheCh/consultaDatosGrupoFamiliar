@@ -173,11 +173,18 @@ tr:hover {
 
 /* Añadir contenedor para la tabla con desplazamiento horizontal */
 .table-responsive {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;  /* Habilita el scroll horizontal */
+    -webkit-overflow-scrolling: touch;  /* Soporte para dispositivos móviles */
     margin-top: 20px;
+    width: 100%;
 }
 
+/* Asegúrate de que las tablas no excedan el ancho de su contenedor */
+table {
+    width: 100%;
+    table-layout: auto;  /* Permite que las columnas se ajusten automáticamente */
+    min-width: 1000px;  /* Esto es para asegurarse de que las columnas sean suficientemente anchas en dispositivos pequeños */
+}
 
 /* Footer siempre abajo */
 footer {
@@ -192,9 +199,6 @@ footer {
     font-size: 16px;
     border-radius: 10px;
 }
-
-/* ============================= */
-/* Media Queries para hacer el HEADER RESPONSIVE */
 
 /* ============================= */
 /* Media Queries para hacer el HEADER RESPONSIVE */
