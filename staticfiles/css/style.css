@@ -162,6 +162,14 @@ tr:hover {
     background-color: #e3f2fd;
 }
 
+/* Añadir contenedor para la tabla con desplazamiento horizontal */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 20px;
+}
+
+
 /* Footer siempre abajo */
 footer {
     background-color: #133d87;

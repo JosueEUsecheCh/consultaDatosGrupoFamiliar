@@ -15,7 +15,9 @@
     </form>
     
     <!-- Tabla de resultados -->
-    {% if resultados %}
+<!-- Tabla de resultados -->
+{% if resultados %}
+    <div class="table-responsive"> <!-- Contenedor de tabla con scroll horizontal -->
         <table>
             <thead>
                 <tr>
@@ -50,7 +52,9 @@
                 {% endfor %}
             </tbody>
         </table>
-    {% elif request.method == "POST" %}
-        <p id="no-results">No se encontraron resultados.</p>
-    {% endif %}
+    </div> <!-- Fin del contenedor de tabla -->
+{% elif request.method == "POST" %}
+    <p id="no-results">No se encontraron resultados.</p>
+{% endif %}
+
 {% endblock %}
