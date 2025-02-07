@@ -179,6 +179,9 @@ footer {
 /* ============================= */
 /* Media Queries para hacer el HEADER RESPONSIVE */
 
+/* ============================= */
+/* Media Queries para hacer el HEADER RESPONSIVE */
+
 /* Pantallas pequeñas (tablets y móviles) */
 @media screen and (max-width: 768px) {
     header {
@@ -214,6 +217,27 @@ footer {
         font-size: 20px; /* Reduce el tamaño del título en móviles */
         word-wrap: break-word;
     }
+
+    /* Ajustes para los botones en pantallas pequeñas */
+    .search-form input {
+        width: 90%; /* Ocupa el 90% del ancho disponible */
+        font-size: 14px;
+        margin-bottom: 1rem; /* Espacio entre el input y los botones */
+    }
+
+    .search-form button {
+        width: 90%;  /* Ocupa el 90% del ancho disponible */
+        font-size: 16px;
+        margin-bottom: 0.5rem; /* Añade margen entre los botones */
+        padding: 10px; /* Reduce el tamaño del botón */
+    }
+
+    #clear-btn {
+        width: 90%; /* Ocupa el 90% del ancho disponible */
+        font-size: 16px;
+        margin-bottom: 0.5rem; /* Añade margen entre los botones */
+        padding: 10px; /* Reduce el tamaño del botón */
+    }
 }
 
 /* Pantallas muy pequeñas (teléfonos pequeños) */
@@ -231,13 +255,15 @@ footer {
     .search-form button {
         width: 90%;
         font-size: 16px;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem; /* Añade margen entre los botones */
+        padding: 10px;
     }
 
     #clear-btn {
         width: 90%;
         font-size: 16px;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem; /* Añade margen entre los botones */
+        padding: 10px;
     }
 
     footer {
