@@ -52,6 +52,8 @@ header {
     align-items: center;
     flex-direction: column; /* Esto asegura que los elementos se apilen */
     text-align: center; /* Centra el texto */
+    justify-content: center; /* Asegura que el contenido esté centrado verticalmente */
+    margin-bottom: 10px; /* Espaciado entre el logo y los nombres */
 }
 
 #logo {
@@ -64,6 +66,7 @@ header {
     display: flex;
     flex-direction: column; /* Asegura que el texto se apile */
     align-items: center; /* Centra los textos */
+    margin-top: 10px; /* Espacio entre el logo y los textos */
 }
 
 /* Nombre de la universidad */
