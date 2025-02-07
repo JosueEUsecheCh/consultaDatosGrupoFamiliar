@@ -13,7 +13,7 @@ html, body {
 
 /* Fondo gradiente suave */
 body {
-    background: linear-gradient(135deg, #f3f4f6, #e2e8f0);  /* Gradiente desde un gris muy claro a un gris más oscuro */
+    background: linear-gradient(135deg, #f3f4f6, #e2e8f0);  
     color: #333;
 }
 
@@ -33,13 +33,6 @@ body {
     text-align: center;
 }
 
-/* Estilos para el logo */
-#logo {
-    height: 100px; /* Ajusta el tamaño del logo según lo necesites */
-    margin-right: 15px; /* Espaciado a la derecha del logo */
-    vertical-align: middle; /* Centra verticalmente el logo con el texto */
-}
-
 /* Estilos para el header */
 header {
     background-color: #133d87;
@@ -47,20 +40,16 @@ header {
     padding: 15px 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Distribuir elementos en el header */
+    justify-content: space-between;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    flex-wrap: wrap; /* Esto permite que los elementos se acomoden en varias líneas en pantallas pequeñas */
 }
 
 /* Sección izquierda (Logo + Nombre de la Universidad) */
 .header-left {
     display: flex;
     align-items: center;
-    flex: 1 1 40%;
-    justify-content: center; /* Centra los elementos */
-    margin-bottom: 10px; /* Espacio debajo del logo */
 }
 
 #logo {
@@ -78,9 +67,8 @@ header {
 /* Sección derecha (Título principal) */
 .header-right {
     text-align: center;
-    flex-grow: 1;
-    flex: 1 1 50%;
-    margin-bottom: 10px;
+    flex-grow: 1; /* Permite que el título ocupe más espacio */
+    margin-right: 22%;
 }
 
 .header-right h1 {
@@ -91,10 +79,6 @@ header {
 .search-form {
     margin: 20px auto;
     text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px; /* Espaciado uniforme entre elementos */
 }
 
 .search-form label {
@@ -112,7 +96,6 @@ header {
     transition: border 0.3s ease-in-out;
 }
 
-/* Efecto al hacer foco en el input */
 .search-form input:focus {
     border: 1px solid #4a90e2;  
     box-shadow: 0 0 8px rgba(74, 144, 226, 0.5);
@@ -138,6 +121,7 @@ header {
 #clear-btn {
     background-color: #e94e77;
     border-radius: 25px;
+    padding: 12px 20px;
 }
 
 #clear-btn:hover {
@@ -149,9 +133,9 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    background-color: #ffffff; /* Fondo blanco para la tabla */
+    background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave en la tabla */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 th, td {
@@ -162,19 +146,18 @@ th, td {
 }
 
 th {
-    background-color: #133d87; /* Azul suave para los encabezados */
+    background-color: #133d87;
     color: white;
 }
 
 td {
-    background-color: #f9f9f9; /* Color suave para las celdas */
+    background-color: #f9f9f9;
 }
 
 tr:nth-child(even) td {
-    background-color: #f2f2f2; /* Alternar color de filas */
+    background-color: #f2f2f2;
 }
 
-/* Efecto al pasar el ratón sobre las filas de la tabla */
 tr:hover {
     background-color: #e3f2fd;
 }
@@ -188,40 +171,73 @@ footer {
     width: 100%;
     position: relative;
     bottom: 0;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave en el footer */
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
     font-size: 16px;
     border-radius: 10px;
 }
 
 /* ============================= */
-/* Media Queries para hacer responsive */
+/* Media Queries para hacer el HEADER RESPONSIVE */
 
-/* Pantallas pequeñas (móviles) */
+/* Pantallas pequeñas (tablets y móviles) */
 @media screen and (max-width: 768px) {
     header {
-        flex-direction: column; /* Cambia la dirección a columna en pantallas pequeñas */
-        text-align: center; /* Centra los textos */
-        padding: 10px 15px; /* Reduce el padding en pantallas pequeñas */
+        flex-direction: column;  /* Cambia el diseño a columna */
+        text-align: center;  /* Centra los elementos */
+        padding: 10px;
     }
 
     .header-left {
-        flex: 1 1 100%; /* Ocupa el 100% del espacio disponible */
-        margin-bottom: 10px; /* Añade un margen inferior para separar el logo del título */
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #logo {
+        height: 60px; /* Reduce el tamaño del logo */
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+
+    .university-name {
+        font-size: 14px;
+        text-align: center;
     }
 
     .header-right {
-        flex: 1 1 100%; /* También ocupa el 100% del espacio */
-        margin-bottom: 10px; /* Espacio debajo del título */
+        margin-right: 0;
+        margin-top: 10px;
+        text-align: center;
     }
 
     .header-right h1 {
-        font-size: 24px; /* Ajusta el tamaño del título en móviles */
+        font-size: 20px; /* Reduce el tamaño del título en móviles */
+        word-wrap: break-word;
     }
 }
 
-/* Ajustes para pantallas más pequeñas (teléfonos muy pequeños) */
+/* Pantallas muy pequeñas (teléfonos pequeños) */
 @media screen and (max-width: 480px) {
-    .header-right h1 {
-        font-size: 20px;  /* Ajusta aún más el tamaño del título */
+    header {
+        padding: 15px;
+    }
+
+    .search-form input {
+        width: 90%;
+        font-size: 14px;
+    }
+
+    .search-form button {
+        width: 90%;
+        font-size: 16px;
+    }
+
+    #clear-btn {
+        width: 90%;
+        font-size: 16px;
+    }
+
+    footer {
+        font-size: 12px;
     }
 }
