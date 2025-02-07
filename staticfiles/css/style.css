@@ -51,12 +51,16 @@ header {
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    flex-wrap: wrap; /* Esto permite que los elementos se acomoden en varias líneas en pantallas pequeñas */
 }
 
 /* Sección izquierda (Logo + Nombre de la Universidad) */
 .header-left {
     display: flex;
     align-items: center;
+    flex: 1 1 40%;
+    justify-content: center; /* Centra los elementos */
+    margin-bottom: 10px; /* Espacio debajo del logo */
 }
 
 #logo {
@@ -74,26 +78,29 @@ header {
 /* Sección derecha (Título principal) */
 .header-right {
     text-align: center;
-    flex-grow: 1; /* Permite que el título ocupe más espacio */
-    margin-right: 22%;
-    
+    flex-grow: 1;
+    flex: 1 1 50%;
+    margin-bottom: 10px;
 }
 
 .header-right h1 {
     font-size: 36px;
 }
 
-
 /* Estilos del formulario */
 .search-form {
     margin: 20px auto;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Espaciado uniforme entre elementos */
 }
 
 .search-form label {
     font-size: 18px;
     font-weight: bold;
-    margin-right: 10px; /* Espaciado entre el label y el input */
+    margin-right: 10px;
 }
 
 .search-form input {
@@ -101,14 +108,14 @@ header {
     padding: 12px;
     font-size: 16px;
     border: 1px solid #ccc;
-    border-radius: 25px; /* Bordes redondeados */
+    border-radius: 25px;
     transition: border 0.3s ease-in-out;
 }
 
 /* Efecto al hacer foco en el input */
 .search-form input:focus {
-    border: 1px solid #4a90e2;  /* Borde azul cuando se hace foco */
-    box-shadow: 0 0 8px rgba(74, 144, 226, 0.5);  /* Sombra azul suave */
+    border: 1px solid #4a90e2;  
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.5);
 }
 
 /* Botón de búsqueda y borrar */
@@ -125,18 +132,16 @@ header {
 }
 
 .search-form button:hover {
-    background-color: #357ab7;  /* Azul más oscuro al pasar el mouse */
+    background-color: #357ab7;
 }
 
-/* Botón "Borrar" con otro color */
 #clear-btn {
-    background-color: #e94e77; /* Rojo suave */
-    border-radius: 25px; /* Bordes redondeados */
-    padding: 12px 20px;
+    background-color: #e94e77;
+    border-radius: 25px;
 }
 
 #clear-btn:hover {
-    background-color: #d43f5e; /* Rojo más oscuro */
+    background-color: #d43f5e;
 }
 
 /* Estilos de la tabla */
@@ -193,73 +198,30 @@ footer {
 
 /* Pantallas pequeñas (móviles) */
 @media screen and (max-width: 768px) {
-    .container {
-        margin-left: 5%;
-        margin-right: 5%;
+    header {
+        flex-direction: column; /* Cambia la dirección a columna en pantallas pequeñas */
+        text-align: center; /* Centra los textos */
+        padding: 10px 15px; /* Reduce el padding en pantallas pequeñas */
     }
 
-    /* Header: Ajuste del tamaño del logo y el título */
-    header h1 {
-        font-size: 20px;
-        text-align: center;
+    .header-left {
+        flex: 1 1 100%; /* Ocupa el 100% del espacio disponible */
+        margin-bottom: 10px; /* Añade un margen inferior para separar el logo del título */
     }
 
-    /* Formulario de búsqueda: Ajustar el tamaño del input */
-    .search-form input {
-        width: 100%;  /* Ocupa todo el ancho disponible */
-        padding: 10px;
+    .header-right {
+        flex: 1 1 100%; /* También ocupa el 100% del espacio */
+        margin-bottom: 10px; /* Espacio debajo del título */
     }
 
-    .search-form button {
-        width: 100%;  /* Ocupa todo el ancho disponible */
-        padding: 10px;
-        font-size: 18px;
-    }
-
-    #clear-btn {
-        width: 100%;  /* Ocupa todo el ancho disponible */
-        padding: 10px;
-        font-size: 18px;
-    }
-
-    /* Tabla responsiva: Hacerla scrollable */
-    table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-
-    th, td {
-        padding: 8px 10px; /* Reducir el padding */
-    }
-
-    footer {
-        font-size: 14px; /* Reducir tamaño de fuente en el footer */
+    .header-right h1 {
+        font-size: 24px; /* Ajusta el tamaño del título en móviles */
     }
 }
 
-/* Pantallas aún más pequeñas (teléfonos muy pequeños) */
+/* Ajustes para pantallas más pequeñas (teléfonos muy pequeños) */
 @media screen and (max-width: 480px) {
-    header {
-        padding: 15px;
-    }
-
-    .search-form input {
-        width: 90%;
-        font-size: 14px;
-    }
-
-    .search-form button {
-        width: 90%;
-        font-size: 16px;
-    }
-
-    #clear-btn {
-        width: 90%;
-        font-size: 16px;
-    }
-
-    footer {
-        font-size: 12px;
+    .header-right h1 {
+        font-size: 20px;  /* Ajusta aún más el tamaño del título */
     }
 }
