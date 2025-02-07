@@ -61,7 +61,7 @@ header {
 .university-name {
     font-size: 18px;
     font-weight: bold;
-    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    
 }
 
 /* Sección derecha (Título principal) */
@@ -72,7 +72,7 @@ header {
 }
 
 .header-right h1 {
-    font-size: 36px;
+    font-size: 24px;
 }
 
 /* Estilos del formulario */
