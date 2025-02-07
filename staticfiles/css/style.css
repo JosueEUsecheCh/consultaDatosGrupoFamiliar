@@ -162,14 +162,6 @@ tr:hover {
     background-color: #e3f2fd;
 }
 
-/* Añadir contenedor para la tabla con desplazamiento horizontal */
-.table-responsive {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    margin-top: 20px;
-}
-
-
 /* Footer siempre abajo */
 footer {
     background-color: #133d87;
@@ -183,9 +175,6 @@ footer {
     font-size: 16px;
     border-radius: 10px;
 }
-
-/* ============================= */
-/* Media Queries para hacer el HEADER RESPONSIVE */
 
 /* ============================= */
 /* Media Queries para hacer el HEADER RESPONSIVE */
@@ -225,27 +214,6 @@ footer {
         font-size: 20px; /* Reduce el tamaño del título en móviles */
         word-wrap: break-word;
     }
-
-    /* Ajustes para los botones en pantallas pequeñas */
-    .search-form input {
-        width: 90%; /* Ocupa el 90% del ancho disponible */
-        font-size: 14px;
-        margin-bottom: 1rem; /* Espacio entre el input y los botones */
-    }
-
-    .search-form button {
-        width: 90%;  /* Ocupa el 90% del ancho disponible */
-        font-size: 16px;
-        margin-bottom: 0.5rem; /* Añade margen entre los botones */
-        padding: 10px; /* Reduce el tamaño del botón */
-    }
-
-    #clear-btn {
-        width: 90%; /* Ocupa el 90% del ancho disponible */
-        font-size: 16px;
-        margin-bottom: 0.5rem; /* Añade margen entre los botones */
-        padding: 10px; /* Reduce el tamaño del botón */
-    }
 }
 
 /* Pantallas muy pequeñas (teléfonos pequeños) */
@@ -263,15 +231,13 @@ footer {
     .search-form button {
         width: 90%;
         font-size: 16px;
-        margin-bottom: 1rem; /* Añade margen entre los botones */
-        padding: 10px;
+        margin-bottom: 2rem;
     }
 
     #clear-btn {
         width: 90%;
         font-size: 16px;
-        margin-bottom: 1rem; /* Añade margen entre los botones */
-        padding: 10px;
+        margin-bottom: 2rem;
     }
 
     footer {
