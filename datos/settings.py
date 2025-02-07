@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -87,14 +88,7 @@ WSGI_APPLICATION = 'datos.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE':'django.db.backends.postgresql',
-        'NAME':'db_datos',
-        'USER':'postgres',
-        'PASSWORD':'1234',
-        'HOST':'localhost',
-        'PORT':'5432',
-    }
+    'default': dj_database_url.config(default='postgresql://usuario_db_datos:OmYBSNIbJq1dfIBPeR6qOiBeuI46MVUS@dpg-cuj65ha3esus73eu1gng-a.oregon-postgres.render.com/db_datos_etpp')
 }
 
 
