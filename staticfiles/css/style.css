@@ -67,6 +67,7 @@ header {
     flex-direction: column; /* Asegura que el texto se apile */
     align-items: center; /* Centra los textos */
     margin-top: 10px; /* Espacio entre el logo y los textos */
+    margin-left: 10px;
 }
 
 /* Nombre de la universidad */
