@@ -46,8 +46,9 @@ header {
     color: white;
     padding: 15px 20px;
     display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas si es necesario */
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-between; /* Distribuir elementos en el header */
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -57,6 +58,7 @@ header {
 .header-left {
     display: flex;
     align-items: center;
+    flex: 1 1 40%; /* Esto hace que ocupe el 40% del espacio disponible */
 }
 
 #logo {
@@ -74,14 +76,13 @@ header {
 /* Sección derecha (Título principal) */
 .header-right {
     text-align: center;
-    flex-grow: 1; /* Permite que el título ocupe más espacio */
-    margin-right: 22%;
+    flex-grow: 2; /* Permite que el título ocupe más espacio */
+    flex-basis: 50%; /* Esto hace que ocupe el 50% del espacio disponible */
 }
 
 .header-right h1 {
     font-size: 36px;
 }
-
 
 /* Estilos del formulario */
 .search-form {
@@ -141,31 +142,39 @@ header {
 
 /* 📱 Estilos para pantallas pequeñas */
 @media screen and (max-width: 768px) {
-    .search-form {
-        flex-direction: column;  /* Asegura que los elementos se coloquen en columna */
-        align-items: center; /* Centra los elementos */
+    header {
+        flex-direction: column;  /* Cambia la dirección a columna en pantallas pequeñas */
+        text-align: center; /* Centra los textos */
+        padding: 10px 15px; /* Reduce el padding en pantallas pequeñas */
     }
 
-    .search-form input {
-        width: 90%;  /* Ocupa el 90% del ancho disponible */
-        max-width: 300px; /* Evita que se haga demasiado grande */
-        margin-bottom: 10px; /* Espacio debajo del input */
+    /* Ajustes para la sección izquierda (logo y nombre) */
+    .header-left {
+        flex: 1 1 100%;  /* Ocupa el 100% del espacio disponible */
+        margin-bottom: 10px; /* Añade un margen inferior para separar el logo del título */
     }
 
-    .search-form button {
-        width: 60%;  /* Reduce el tamaño de los botones en móviles */
-        max-width: 200px;
-        padding: 10px;
-        font-size: 16px;
-        margin-top: 5px; /* Espacio entre botones */
+    /* Ajustes para la sección derecha (título principal) */
+    .header-right {
+        flex: 1 1 100%; /* También ocupa el 100% del espacio */
+        margin-bottom: 10px; /* Espacio debajo del título */
     }
 
-    #clear-btn {
-        width: 60%;
-        max-width: 200px;
-        padding: 10px;
-        font-size: 16px;
-        margin-top: 5px;
+    /* Ajuste en el tamaño del título */
+    .header-right h1 {
+        font-size: 24px; /* Ajusta el tamaño del título en móviles */
+    }
+
+    /* Ajuste para los márgenes y espaciado */
+    .header-right {
+        margin-right: 0;
+    }
+}
+
+/* Ajustes para pantallas más pequeñas (teléfonos muy pequeños) */
+@media screen and (max-width: 480px) {
+    .header-right h1 {
+        font-size: 20px;  /* Ajusta aún más el tamaño del título */
     }
 }
 
