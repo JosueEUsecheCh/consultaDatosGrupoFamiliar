@@ -57,8 +57,9 @@ ROOT_URLCONF = 'datos.urls'
 
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static",  # Aquí se pondrán tus archivos estáticos como CSS, JS
+    BASE_DIR / "principal/static",  # Cambiar la ruta para que apunte correctamente
 ]
+
 
 # Configuración de las plantillas
 TEMPLATES = [
