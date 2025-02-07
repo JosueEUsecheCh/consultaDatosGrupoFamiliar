@@ -1,3 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Buscar Cédula{% endblock %}
+
+{% block content %}
+    <h1>Buscar Cédula Titular</h1>
+
+    <!-- Formulario de búsqueda con POST -->
+    <form method="post" class="search-form">
+        {% csrf_token %}
+        <label for="id_ci_titular">Cédula Titular:</label>
+        {{ form.ci_titular }}
+        <button type="submit">Buscar</button>
+        <button type="submit" name="clear" id="clear-btn">Borrar</button>  <!-- Botón con id "clear-btn" -->
+    </form>
+    
+    <!-- Tabla de resultados -->
+<!-- Tabla de resultados -->
 {% if resultados %}
     <div class="table-responsive"> <!-- Contenedor de tabla con scroll horizontal -->
         <table>
@@ -38,3 +56,6 @@
 {% elif request.method == "POST" %}
     <p id="no-results">No se encontraron resultados.</p>
 {% endif %}
+
+
+{% endblock %}
