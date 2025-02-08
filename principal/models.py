@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 # Cargar variables desde el archivo .env
 load_dotenv()  # Esto carga el archivo .env
-KEY = os.getenv("ENCRIPTYON_KEY")  # Cargar la clave de encriptación desde el archivo .env
+KEY = os.getenv("ENCRYPTION_KEY")  # Cargar la clave de encriptación desde el archivo .env
 
 # Crear una instancia de Fernet con la clave
 cipher_suite = Fernet(KEY)
