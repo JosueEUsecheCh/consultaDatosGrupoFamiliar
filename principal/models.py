@@ -11,10 +11,10 @@ KEY = os.getenv("ENCRYPTION_KEY")  # Cargar la clave de encriptación desde el a
 cipher_suite = Fernet(KEY)
 
 class MyTable(models.Model):
-    ci_titular = models.CharField(max_length=20, primary_key=True)
+    ci_titular = models.CharField(max_length=255, primary_key=True)
     apellidos = models.CharField(max_length=24)
     nombres = models.CharField(max_length=25)
-    ci_beneficiario = models.CharField(max_length=20, blank=True, null=True)
+    ci_beneficiario = models.CharField(max_length=255, blank=True, null=True)
     parentesco = models.CharField(max_length=9)
     sexo = models.CharField(max_length=1, choices=[('M', 'Masculino'), ('F', 'Femenino')])
     fecha_de_nacimiento = models.DateField(blank=True, null=True)
