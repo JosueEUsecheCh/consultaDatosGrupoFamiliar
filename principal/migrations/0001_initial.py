@@ -14,10 +14,10 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='MyTable',
             fields=[
-                ('ci_titular', models.CharField(max_length=20, primary_key=True, serialize=False)),
+                ('ci_titular', models.CharField(max_length=255, primary_key=True, serialize=False)),
                 ('apellidos', models.CharField(max_length=24)),
                 ('nombres', models.CharField(max_length=25)),
-                ('ci_beneficiario', models.CharField(blank=True, max_length=20, null=True)),
+                ('ci_beneficiario', models.CharField(blank=True, max_length=255, null=True)),
                 ('parentesco', models.CharField(max_length=9)),
                 ('sexo', models.CharField(choices=[('M', 'Masculino'), ('F', 'Femenino')], max_length=1)),
                 ('fecha_de_nacimiento', models.DateField(blank=True, null=True)),
