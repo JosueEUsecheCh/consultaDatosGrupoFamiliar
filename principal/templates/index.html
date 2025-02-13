@@ -43,7 +43,7 @@
                         <td>{{ registro.ci_beneficiario|default:" " }}</td>
                         <td>{{ registro.parentesco|default:" " }}</td>
                         <td>{{ registro.sexo|default:" " }}</td>
-                        <td>{{ registro.fecha_de_nacimiento|default:" " }}</td>
+                        <td>{{ registro.fecha_de_nacimiento|date:"d/m/Y" }}</td>
                         <td>{{ registro.edad|default:" " }}</td>
                         <td>{{ registro.discapacidad_o_condicion_especial|default:" " }}</td>
                         <td>{{ registro.indicar_menor_bajo_custodia_legal|default:" " }}</td>
